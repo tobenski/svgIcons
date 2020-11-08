@@ -15,18 +15,18 @@
                   </div>
                 </div>
             @endif
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Create New Icont</button>
+            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">{{ __('Create New Icon') }}</button>
             @if($isOpen)
                 @include('livewire.create')
             @endif
             <table class="table-fixed w-full">
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Icon</th>
-                        <th class="px-4 py-2">Name</th>
-                        <th class="px-4 py-2">Description</th>
-                        <th class="px-4 py-2">Content</th>
-                        <th class="px-4 py-2">Action</th>
+                        <th class="px-4 py-2">{{ __('Icon') }}</th>
+                        <th class="px-4 py-2">{{ __('Name') }}</th>
+                        <th class="px-4 py-2">{{ __('Description') }}</th>
+                        <th class="px-4 py-2">{{ __('Content') }}</th>
+                        <th class="px-4 py-2">{{ __('Action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,8 +37,8 @@
                         <td class="border px-4 py-2">{{ $icon->description }}</td>
                         <td class="border px-4 py-2 overflow-hidden">{{substr($icon->content,0,50) }} ...</td>
                         <td class="border px-4 py-2">
-                        <button wire:click="edit({{ $icon->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                            <button wire:click="delete({{ $icon->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button wire:click="edit({{ $icon->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{ __('Edit') }}</button>
+                            <button wire:click="delete({{ $icon->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{{ __('Delete') }}</button>
                         </td>
                     </tr>
                     @endforeach
