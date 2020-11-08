@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Icons;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/', Icons::class )->name('home');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
+
+
+
